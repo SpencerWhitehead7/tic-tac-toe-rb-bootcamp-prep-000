@@ -81,7 +81,11 @@ def full?(board)
 end
 
 def draw?(board)
+<<<<<<< HEAD
   if !won?(board) && full?(board)
+=======
+  if won?(board) == false && full?(board) == true
+>>>>>>> a05bce58cebe5529378e383d83b199f34768fe89
     return true
   else
     return false
@@ -89,7 +93,11 @@ def draw?(board)
 end
 
 def over?(board)
+<<<<<<< HEAD
   if won?(board) || draw?(board) || full?(board)
+=======
+  if won?(board) != false || draw?(board) == true || full?(board) == true
+>>>>>>> a05bce58cebe5529378e383d83b199f34768fe89
     return true
   else
     return false
@@ -97,7 +105,11 @@ def over?(board)
 end
 
 def winner(board)
+<<<<<<< HEAD
   if won?(board)
+=======
+  if won?(board) != false
+>>>>>>> a05bce58cebe5529378e383d83b199f34768fe89
     return board[won?(board)[0]]
   else
     return nil
@@ -107,6 +119,7 @@ end
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 def play(board)
+<<<<<<< HEAD
   while !over?(board)
     turn(board)
   end
@@ -114,5 +127,15 @@ def play(board)
     puts "Cat's Game!"
   else
     puts "Congratulations #{winner(board)}!"
+=======
+  input = gets.strip
+  turn(board)
+  if over?(board) == true && draw?(board) == true
+    return "Cat's Game!"
+  elsif over?(board) == true
+    return "Congratulations #{winner(board)}!"
+  else
+    play(board)
+>>>>>>> a05bce58cebe5529378e383d83b199f34768fe89
   end
 end
